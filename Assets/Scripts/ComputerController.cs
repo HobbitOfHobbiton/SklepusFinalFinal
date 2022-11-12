@@ -13,6 +13,10 @@ public class ComputerController : MonoBehaviour, IInteractable
     [SerializeField] private Email goodInfoEmail;
     [SerializeField] private List<Email> emailsByDays = new List<Email>();
     [SerializeField] private List<TMP_Text> texts = new List<TMP_Text>();
+    
+    [Space]
+    [SerializeField] private string sceneSceneName = "MallMaciek";
+
 
     bool isMailTurnedOn = false;
     public void Interact()
@@ -24,7 +28,7 @@ public class ComputerController : MonoBehaviour, IInteractable
         int sklepusBusted = PlayerPrefs.GetInt("sklepusBusted");
         if (sklepusBusted == 0)
         {
-            DisplayBadEmail();
+            DisplayBadEmail(currentDay);
         }
         else
         {
@@ -36,11 +40,11 @@ public class ComputerController : MonoBehaviour, IInteractable
         isMailTurnedOn = true;
     }
 
-    private void DisplayBadEmail()
+    private void DisplayBadEmail(int currentDay)
     {
-        texts[0].text = emailsByDays[0].fromByDay;
-        texts[1].text = emailsByDays[0].topicByDay;
-        texts[2].text = emailsByDays[0].textByDay;
+        texts[0].text = emailsByDays[currentDay].fromByDay;
+        texts[1].text = emailsByDays[currentDay].topicByDay;
+        texts[2].text = emailsByDays[currentDay].textByDay;
     }
     private void DisplayGoodEmail()
     {
@@ -71,7 +75,7 @@ public class ComputerController : MonoBehaviour, IInteractable
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                SceneManager.LoadScene("MallMaciek", LoadSceneMode.Single);
+                SceneManager.LoadScene(sceneSceneName, LoadSceneMode.Single);
             }
         }
     }

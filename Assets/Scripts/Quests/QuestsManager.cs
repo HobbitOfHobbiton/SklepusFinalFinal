@@ -18,6 +18,9 @@ public class QuestsManager : MonoBehaviour
     [SerializeField] private DayManager dayManager;
 
     [Space]
+    [SerializeField] private string roomSceneName = "Room";
+
+    [Space]
     [Header("Day 0 quest variables")]
     [SerializeField] private FoodstackController foodStack;
     [SerializeField] private ShelfFoodPutter shelfFoodPutter;
@@ -26,13 +29,14 @@ public class QuestsManager : MonoBehaviour
     [Space]
     [Header("Day 1 quest variables")]
     [SerializeField] private BoxController boxController;
+    [SerializeField] private WineController wineController;
 
 
 
     public void DisplayQuestFromDay(int day)
     {
         Debug.Log("init " + day);
-
+        if (SceneManager.GetActiveScene().name == roomSceneName) return;
         switch (day)
         {
             case 0:
@@ -52,7 +56,7 @@ public class QuestsManager : MonoBehaviour
             case 2:
                 {
                     text.text = day2Text;
-
+                    QuestDay2Initialize();
                     break;
                 }
             case 3:
@@ -91,7 +95,8 @@ public class QuestsManager : MonoBehaviour
         puddleController.gameObject.SetActive(false);
 
         boxController.gameObject.SetActive(true);
-        shelfFoodPutter.OnFinishQuest += FinishDay1;
+        wineController.gameObject.SetActive(true);
+        boxController.OnFinishQuest += FinishDay1;
 
     }
 
@@ -104,10 +109,34 @@ public class QuestsManager : MonoBehaviour
         StartCoroutine(GoToBedroomInTime(2));
     }
 
+    private void QuestDay2Initialize()
+    {
+
+        boxController.gameObject.SetActive(false);
+        wineController.gameObject.SetActive(false);
+
+
+
+        //superKerfus.OnFinishQuest += FinishDay2;
+        //exit.OnFinishQuest += FinishDay2;
+
+    }
+
+    private void FinishDay2(bool sklepusBusted)
+    {
+
+        dayManager.FinishDay(sklepusBusted);
+        openEyes.StartClosingEyes();
+        text.text = "";
+        boxController.OnFinishQuest -= FinishDay2;
+
+    }
+
+
     private IEnumerator GoToBedroomInTime(float timeToGoThrough)
     {
         yield return new WaitForSeconds(timeToGoThrough);
-        SceneManager.LoadScene("Room", LoadSceneMode.Single);
+        SceneManager.LoadScene(roomSceneName, LoadSceneMode.Single);
         yield return null;
     }
 }
