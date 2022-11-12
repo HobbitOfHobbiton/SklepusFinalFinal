@@ -565,6 +565,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1053903753 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3560640723887715227, guid: 1e63e1880c20b28429ec39cdc6a45ceb, type: 3}
+  m_PrefabInstance: {fileID: 1350702724014615315}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1196481458 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2538622516333190006, guid: acb0f3457c4388844838b0857e5bbb90, type: 3}
@@ -1160,6 +1171,10 @@ PrefabInstance:
       propertyPath: m_text
       value: ...
       objectReference: {fileID: 0}
+    - target: {fileID: 3999733326779651700, guid: 1e63e1880c20b28429ec39cdc6a45ceb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 1e63e1880c20b28429ec39cdc6a45ceb, type: 3}
@@ -1371,6 +1386,10 @@ PrefabInstance:
       propertyPath: questsManager
       value: 
       objectReference: {fileID: 2000495485}
+    - target: {fileID: 8323241799063968909, guid: c441da62d7931534384623edb9a61b5d, type: 3}
+      propertyPath: currentDayText
+      value: 
+      objectReference: {fileID: 1053903753}
     - target: {fileID: 8323241799063968910, guid: c441da62d7931534384623edb9a61b5d, type: 3}
       propertyPath: m_RootOrder
       value: 3
