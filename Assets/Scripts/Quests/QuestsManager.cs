@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class QuestsManager : MonoBehaviour
 {
@@ -69,13 +70,21 @@ public class QuestsManager : MonoBehaviour
         openEyes.StartClosingEyes();
         text.text = "";
         shelfFoodPutter.OnFinishQuest -= FinishDay1;
-
+        StartCoroutine(GoToBedroomInTime(2));
     }
 
     private void QuestDay1Initialize()
     {
         foodStack.gameObject.SetActive(false);
         shelfFoodPutter.gameObject.SetActive(false);
+    }
+
+
+    private IEnumerator GoToBedroomInTime(float timeToGoThrough)
+    {
+        yield return new WaitForSeconds(timeToGoThrough);
+        SceneManager.LoadScene("Room", LoadSceneMode.Single);
+        yield return null;
     }
 }
 
