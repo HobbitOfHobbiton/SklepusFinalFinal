@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DayManager : MonoBehaviour
 {
@@ -10,8 +12,12 @@ public class DayManager : MonoBehaviour
     [SerializeField] OpenEyes openEyes;
     [SerializeField] Sklepus sklepus;
     [SerializeField] QuestsManager questsManager;
+    [SerializeField] TMP_Text currentDayText;
+    [SerializeField] private bool isRoomScene = false;
 
     public const Single DAY_TIME = 20f;
+
+    private const string  dayTextPrefix = "Dzieñ ";
 
     private void Awake()
     {
@@ -30,13 +36,29 @@ public class DayManager : MonoBehaviour
         openEyes.StartOpeningEyes();
         sklepus.PlayDaySequence(currentDay);
         questsManager.DisplayQuestFromDay(currentDay);
+        StartCoroutine(DisplayTextStartDay());
+    }
+
+    private IEnumerator DisplayTextStartDay()
+    {
+        if (isRoomScene) yield return null;
+
+        currentDayText.text = dayTextPrefix + (currentDay+1);
+
+        currentDayText.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(3f);
+
+        currentDayText.gameObject.SetActive(false);
+
+
+        yield return null;
     }
 
     private void InitiateSubsequentDay()
     {
         currentDay++;
         PlayerPrefs.SetInt("currentDay", currentDay);
-
     }
 
     public void FinishDay(bool sklepusBusted)

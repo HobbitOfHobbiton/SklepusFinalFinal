@@ -33,7 +33,7 @@ public class Interact : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            currentInteractable.Interact();
+            currentInteractable?.Interact();
         }
     }
 }
