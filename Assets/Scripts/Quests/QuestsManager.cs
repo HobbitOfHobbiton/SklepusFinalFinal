@@ -16,6 +16,7 @@ public class QuestsManager : MonoBehaviour
     [Space]
     [SerializeField] private OpenEyes openEyes;
     [SerializeField] private DayManager dayManager;
+    [SerializeField] private bool isRoom = false;
 
     [Space]
     [SerializeField] private string roomSceneName = "Room";
@@ -35,8 +36,11 @@ public class QuestsManager : MonoBehaviour
 
     public void DisplayQuestFromDay(int day)
     {
-        Debug.Log("init " + day);
-        if (SceneManager.GetActiveScene().name == roomSceneName) return;
+        if (isRoom)
+        {
+            text.text = "";
+            return;
+        }
         switch (day)
         {
             case 0:
