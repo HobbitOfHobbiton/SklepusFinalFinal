@@ -2222,6 +2222,7 @@ GameObject:
   m_Component:
   - component: {fileID: 240074482}
   - component: {fileID: 240074483}
+  - component: {fileID: 240074484}
   m_Layer: 0
   m_Name: FoodTarget
   m_TagString: Untagged
@@ -2262,6 +2263,27 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 8.895238, y: 10.472297, z: 6.0465255}
   m_Center: {x: -0.21342707, y: -1.8562592, z: -2.5232627}
+--- !u!114 &240074484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240074481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1ad5302bbdd82c44a777b42c7c95cf3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetObjects:
+  - {fileID: 952841197}
+  - {fileID: 307409244}
+  - {fileID: 1696445368}
+  - {fileID: 447589787}
+  - {fileID: 1169023960}
+  targetMaterial: {fileID: 2100000, guid: 1711faf9d00669e4997d9d886fee5aa6, type: 2}
+  handTransform: {fileID: 1740643822}
+  handHolder: {fileID: 1740643823}
 --- !u!1 &254074100
 GameObject:
   m_ObjectHideFlags: 0
@@ -16166,6 +16188,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1776885640391083198, guid: c2dac4bf1bbb3d042b8f1193685db107, type: 3}
+      propertyPath: interactionString
+      value: 
+      objectReference: {fileID: 1350702724014615317}
     - target: {fileID: 3794619107606657641, guid: c2dac4bf1bbb3d042b8f1193685db107, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -16214,9 +16240,29 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3794619107606657645, guid: c2dac4bf1bbb3d042b8f1193685db107, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: c2dac4bf1bbb3d042b8f1193685db107, type: 3}
+--- !u!4 &1740643822 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3271819233599917953, guid: c2dac4bf1bbb3d042b8f1193685db107, type: 3}
+  m_PrefabInstance: {fileID: 1740643821}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1740643823 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6418856141810017916, guid: c2dac4bf1bbb3d042b8f1193685db107, type: 3}
+  m_PrefabInstance: {fileID: 1740643821}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4048c806ca8f36f49870d3275f0f282c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1754884629
 GameObject:
   m_ObjectHideFlags: 0
@@ -16871,7 +16917,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee54982ce26cc444db3734b02f8581ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalNumberOfProducts: 0
+  foodObjects:
+  - {fileID: 166453562}
+  - {fileID: 374075660}
+  - {fileID: 807991537}
+  - {fileID: 494673479}
+  - {fileID: 478617448}
+  playerHandTransform: {fileID: 1740643822}
+  handHolder: {fileID: 1740643823}
 --- !u!1 &1883588547
 GameObject:
   m_ObjectHideFlags: 0
@@ -18155,8 +18208,9 @@ MonoBehaviour:
   day1Text: "Posprz\u0105taj na dziale z nabia\u0142em."
   day2Text: "Wyczy\u015B\u0107 rega\u0142 z makaronami."
   day3Text: "Sklepu\u015B ma problem sprz\u0119towy - pom\xF3\u017C mu."
-  foodStack: {fileID: 0}
-  shelfFoodPutter: {fileID: 0}
+  foodStack: {fileID: 1863315943}
+  shelfFoodPutter: {fileID: 240074484}
+  openEyes: {fileID: 1018482796}
 --- !u!4 &2000495486
 Transform:
   m_ObjectHideFlags: 0
@@ -19241,6 +19295,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1350702724014615317 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6810934104789445659, guid: 1e63e1880c20b28429ec39cdc6a45ceb, type: 3}
+  m_PrefabInstance: {fileID: 1350702724014615315}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8323241798819396248
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19257,6 +19322,10 @@ PrefabInstance:
       propertyPath: openEyes
       value: 
       objectReference: {fileID: 1018482796}
+    - target: {fileID: 8323241799063968909, guid: c441da62d7931534384623edb9a61b5d, type: 3}
+      propertyPath: questsManager
+      value: 
+      objectReference: {fileID: 2000495485}
     - target: {fileID: 8323241799063968910, guid: c441da62d7931534384623edb9a61b5d, type: 3}
       propertyPath: m_RootOrder
       value: 3

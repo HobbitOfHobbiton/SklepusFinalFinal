@@ -11,19 +11,17 @@ public class OpenEyes : MonoBehaviour
     private bool areOpeningEyes = false;
     private bool areClosingEyes = false;
 
-    public void Start()
-    {
-        StartBlinking();
-    }
-
     public void StartOpeningEyes()
     {
+        Color col = new Color(0, 0, 0, 1);
+
+        eyesImage.color = col;
         areOpeningEyes = true;
     }
 
     public void StartClosingEyes()
     {
-        areClosingEyes = true;
+            areClosingEyes = true;
     }
 
     public void StartBlinking()
