@@ -22,6 +22,7 @@ public class DayManager : MonoBehaviour
 
     private void StartDay()
     {
+        Debug.Log("Current day: " + currentDay);
         openEyes.StartOpeningEyes();
         questsManager.DisplayQuestFromDay(currentDay);
     }

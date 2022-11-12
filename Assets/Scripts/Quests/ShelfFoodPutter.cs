@@ -1,8 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShelfFoodPutter : MonoBehaviour, IInteractable
+public class ShelfFoodPutter : MonoBehaviour, IInteractable, IQuestiable
 {
     [SerializeField] private List<GameObject> targetObjects = new List<GameObject>();
     [SerializeField] private Material targetMaterial;
@@ -10,6 +11,7 @@ public class ShelfFoodPutter : MonoBehaviour, IInteractable
     [SerializeField] private HandHolder handHolder;
 
     int currentProduct = 0;
+    public event Action OnFinishQuest = delegate { };
 
     public void Interact()
     {
@@ -26,7 +28,11 @@ public class ShelfFoodPutter : MonoBehaviour, IInteractable
         currentProduct++;
         handHolder.HandOccupied = false;
 
+        if (currentProduct >= targetObjects.Count)
+        {
+            Debug.Log("OnFinishQuest");
 
-        //if (currentProduct >= targetObjects.Count - 1) FinishDay1;
+            OnFinishQuest();
+        }
     }
 }
