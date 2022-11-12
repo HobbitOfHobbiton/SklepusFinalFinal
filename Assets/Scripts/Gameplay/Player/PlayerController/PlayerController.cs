@@ -52,8 +52,13 @@ namespace Controllers
             _movement.CanRun = canRun;
         }
 
+        public Vector2 mouseDelta;
+
         private void Start()
         {
+            Cursor.visible = false;
+            UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+
             _playerReferences = PlayerReferences.Instance;
             _playerManager = PlayerManager.Instance;
 
@@ -65,6 +70,8 @@ namespace Controllers
 
         private void Update()
         {
+            mouseDelta = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
+
             if (!_playerManager.IsPaused && !IsLocked)
             {
                 _movement.Update();
