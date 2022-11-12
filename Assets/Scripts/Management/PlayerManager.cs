@@ -32,7 +32,7 @@ public class PlayerManager : MonoBehaviour
             _isPaused = !_isPaused;
             InvokePauseEvents();
 
-            _pauseMenu.SetActive(_isPaused);
+            _pauseMenu?.SetActive(_isPaused);
         }
     }
 
@@ -54,7 +54,7 @@ public class PlayerManager : MonoBehaviour
         }
         else
         {
-            _pauseMenu.SetActive(false);
+            _pauseMenu?.SetActive(false);
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
 
