@@ -12,6 +12,10 @@ public class QuestsManager : MonoBehaviour
     [SerializeField] string day2Text = "Wyczyœæ rega³ z makaronami.";
     [SerializeField] string day3Text = "Sklepuœ ma problem sprzêtowy - pomó¿ mu.";
 
+    [Space]
+    [Header("Day0 quest variables")]
+    [SerializeField] private FoodstackController foodStack;
+    [SerializeField] private ShelfFoodPutter shelfFoodPutter;
 
     public void DisplayQuestFromDay(int day)
     {
@@ -20,11 +24,13 @@ public class QuestsManager : MonoBehaviour
             case 0:
                 {
                     text.text = day0Text;
+                    QuestDay0Initialize();
                     break;
                 }
             case 1:
                 {
                     text.text = day1Text;
+                    QuestDay1Initialize();
 
                     break;
                 }
@@ -40,8 +46,19 @@ public class QuestsManager : MonoBehaviour
                     break;
                 }
         }
+
     }
-    
+    private void QuestDay0Initialize()
+    {
+        foodStack.gameObject.SetActive(true);
+        shelfFoodPutter.gameObject.SetActive(true);
+    }
+
+    private void QuestDay1Initialize()
+    {
+        foodStack.gameObject.SetActive(false);
+        shelfFoodPutter.gameObject.SetActive(false);
+    }
 }
 
 
