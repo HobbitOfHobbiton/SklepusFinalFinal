@@ -1,3 +1,4 @@
+using FMODUnity;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -15,6 +16,9 @@ public class MenuController : MonoBehaviour
     public GameObject objAngry;
 
     public Color AngryColor;
+
+    [SerializeField] private StudioEventEmitter _emitter;
+    [SerializeField] private StudioEventEmitter _amogus;
 
     // Start is called before the first frame update
     void Start()
@@ -69,6 +73,7 @@ public class MenuController : MonoBehaviour
 
         LeanTween.delayedCall(1.8f, () =>
         {
+            _emitter.Play();
             LeanTween.moveLocal(objFirstNews, new Vector3(0, -211), 1f)
                 .setEaseOutSine()
                 .setOnComplete(() =>
@@ -82,6 +87,8 @@ public class MenuController : MonoBehaviour
                                 LeanTween.delayedCall(1.1f, () =>
                                 {
 
+                                    _emitter.Play();
+                                    
                                     LeanTween.moveLocal(objSecondNews, new Vector3(0, -211), 1f)
                                         .setEaseOutSine()
                                         .setOnComplete(() =>
@@ -97,7 +104,8 @@ public class MenuController : MonoBehaviour
 
                                                         LeanTween.delayedCall(1.1f, () =>
                                                         {
-                                                            LeanTween.value(0f, 1f, 1.5f)
+                                                            _amogus.Play();
+                                                            LeanTween.value(0f, 1f, 2f)
                                                                 .setOnUpdate((Single val) =>
                                                                 {
                                                                     txtAreYouSure.color = new Color(txtAreYouSure.color.r,

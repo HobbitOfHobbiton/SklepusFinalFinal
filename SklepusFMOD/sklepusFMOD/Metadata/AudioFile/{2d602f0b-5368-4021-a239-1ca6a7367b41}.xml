@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{2d602f0b-5368-4021-a239-1ca6a7367b41}">
+		<property name="assetPath">
+			<value>amogus.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>4.4408163265306122</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{08df46d4-dba5-4d60-8225-b6b124caabaa}</destination>
+		</relationship>
+	</object>
+</objects>
