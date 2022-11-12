@@ -9,7 +9,7 @@ public class Interact : MonoBehaviour
     private string interactString = "Interakcja";
 
     private IInteractable currentInteractable;
-
+    
     private void OnTriggerEnter(Collider other)
     {
         if(other.GetComponent<IInteractable>()!= null)

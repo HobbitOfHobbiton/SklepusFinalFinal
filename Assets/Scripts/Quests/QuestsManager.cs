@@ -16,6 +16,11 @@ public class QuestsManager : MonoBehaviour
     [Header("Day0 quest variables")]
     [SerializeField] private FoodstackController foodStack;
     [SerializeField] private ShelfFoodPutter shelfFoodPutter;
+    [SerializeField] private OpenEyes openEyes;
+    [SerializeField] private IQuestiable day0IQuestiable;
+
+
+
 
     public void DisplayQuestFromDay(int day)
     {
@@ -51,7 +56,15 @@ public class QuestsManager : MonoBehaviour
     private void QuestDay0Initialize()
     {
         foodStack.gameObject.SetActive(true);
+        foodStack.InititializeFoodstack();
         shelfFoodPutter.gameObject.SetActive(true);
+        day0IQuestiable.OnFinishQuest += FinishDay1;
+    }
+
+    private void FinishDay1()
+    {
+        openEyes.StartClosingEyes();
+        text.text = "";
     }
 
     private void QuestDay1Initialize()
