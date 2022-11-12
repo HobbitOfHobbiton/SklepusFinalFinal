@@ -863,6 +863,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorOne: {fileID: 1576761882}
   doorTwo: {fileID: 216840191}
+  openDistance: 1.48
 --- !u!43 &50308869
 Mesh:
   m_ObjectHideFlags: 0
@@ -4749,6 +4750,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorOne: {fileID: 112252358}
   doorTwo: {fileID: 547039539}
+  openDistance: 1.48
 --- !u!43 &209694401
 Mesh:
   m_ObjectHideFlags: 0
@@ -23038,6 +23040,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   doorOne: {fileID: 2097390891}
   doorTwo: {fileID: 1059061479}
+  openDistance: 1.48
 --- !u!4 &1933337371
 Transform:
   m_ObjectHideFlags: 0
