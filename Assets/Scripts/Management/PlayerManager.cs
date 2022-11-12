@@ -27,13 +27,13 @@ public class PlayerManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            _isPaused = !_isPaused;
-            InvokePauseEvents();
+        //if (Input.GetKeyDown(KeyCode.Escape))
+        //{
+        //    _isPaused = !_isPaused;
+        //    InvokePauseEvents();
 
-            _pauseMenu?.SetActive(_isPaused);
-        }
+        //    _pauseMenu?.SetActive(_isPaused);
+        //}
     }
 
     public void TogglePause(bool pasue)
