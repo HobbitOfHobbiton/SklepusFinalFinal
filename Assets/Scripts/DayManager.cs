@@ -22,12 +22,17 @@ public class DayManager : MonoBehaviour
 
     private void StartDay()
     {
-        currentDay++;
-        PlayerPrefs.SetInt("currentDay", currentDay);
-
+        Debug.Log("Current day: " + currentDay);
+        openEyes.StartOpeningEyes();
         questsManager.DisplayQuestFromDay(currentDay);
     }
 
+    private void InitiateSubsequentDay()
+    {
+        currentDay++;
+        PlayerPrefs.SetInt("currentDay", currentDay);
+
+    }
 
     private void FinishDay(bool sklepusBusted)
     {
