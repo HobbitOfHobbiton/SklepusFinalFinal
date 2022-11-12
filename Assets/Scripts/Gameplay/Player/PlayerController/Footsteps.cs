@@ -29,7 +29,7 @@ namespace Controllers
 
         public void Update()
         {
-            UpdateFootsteps(_playerController.CameraController.HeadBob.BobCycle);
+            //UpdateFootsteps(_playerController.CameraController.HeadBob.BobCycle);
         }
 
         void UpdateFootsteps(float bobCycle)

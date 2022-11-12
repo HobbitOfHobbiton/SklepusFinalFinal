@@ -1,11 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour
 {
+    public GameObject objIntro;
+
     public Image imgFace;
 
     public GameObject objSmiley;
@@ -16,7 +19,9 @@ public class MenuController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(AngrySmile());   
+        objIntro.SetActive(false);
+        objIntro.GetComponent<Image>().color = new Color(24f / 255f, 24f / 255f, 24f / 255f, 0f);
+        StartCoroutine(AngrySmile());
     }
 
     Boolean isSmile = true;
@@ -26,7 +31,7 @@ public class MenuController : MonoBehaviour
 
         yield return new WaitForSeconds(UnityEngine.Random.Range(1f, 2.5f));
 
-        if(isSmile)
+        if (isSmile)
         {
             isSmile = false;
             objAngry.SetActive(true);
@@ -44,10 +49,92 @@ public class MenuController : MonoBehaviour
         StartCoroutine(AngrySmile());
     }
 
+    public GameObject objFirstNews;
+    public GameObject objSecondNews;
+    public TextMeshProUGUI txtAreYouSure;
+    public void ShowIntro()
+    {
+        print("Intro");
+
+        objIntro.SetActive(true);
+        //objFirstNews.SetActive(false);
+        //objSecondNews.SetActive(false);
+        txtAreYouSure.gameObject.SetActive(false);
+
+        LeanTween.value(0f, 1f, 0.4f)
+            .setOnUpdate((Single val) =>
+            {
+                objIntro.GetComponent<Image>().color = new Color(24f / 255f, 24f / 255f, 24f / 255f, val);
+            });
+
+        LeanTween.delayedCall(1.8f, () =>
+        {
+            LeanTween.moveLocal(objFirstNews, new Vector3(0, -211), 1f)
+                .setEaseOutSine()
+                .setOnComplete(() =>
+                {
+                    LeanTween.delayedCall(3f, () =>
+                    {
+                        LeanTween.moveLocal(objFirstNews, new Vector3(0, -1200), 1f)
+                            .setEaseInSine()
+                            .setOnComplete(() =>
+                            {
+                                LeanTween.delayedCall(1.1f, () =>
+                                {
+
+                                    LeanTween.moveLocal(objSecondNews, new Vector3(0, -211), 1f)
+                                        .setEaseOutSine()
+                                        .setOnComplete(() =>
+                                        {
+                                            LeanTween.delayedCall(2.5f, () =>
+                                            {
+                                                LeanTween.moveLocal(objSecondNews, new Vector3(0, -1200), 1f)
+                                                    .setEaseInSine()
+                                                    .setOnComplete(() =>
+                                                    {
+                                                        txtAreYouSure.color = new Color(txtAreYouSure.color.r, txtAreYouSure.color.g, txtAreYouSure.color.b, 0);
+                                                        txtAreYouSure.gameObject.SetActive(true);
+
+                                                        LeanTween.delayedCall(1.1f, () =>
+                                                        {
+                                                            LeanTween.value(0f, 1f, 1.5f)
+                                                                .setOnUpdate((Single val) =>
+                                                                {
+                                                                    txtAreYouSure.color = new Color(txtAreYouSure.color.r,
+                                                                        txtAreYouSure.color.g,
+                                                                        txtAreYouSure.color.b, val);
+                                                                })
+                                                                .setOnComplete(() =>
+                                                                {
+                                                                    LeanTween.delayedCall(3f, () =>
+                                                                    {
+                                                                        objIntro.SetActive(false);
+                                                                        txtAreYouSure.gameObject.SetActive(false);
+                                                                    });
+                                                                });
+
+                                                        });
+
+                                                    });
+
+                                            });
+
+                                        });
+
+                                });
+
+                            });
+
+                    });
+
+                });
+        });
+
+    }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
