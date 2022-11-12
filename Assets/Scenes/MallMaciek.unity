@@ -152,6 +152,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 99522147}
+  - {fileID: 1198881346}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -664,7 +665,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1198881342}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -7.33, y: 2.26, z: 0.55}
   m_LocalScale: {x: 15.2, y: 4.784148, z: 0.41204542}
   m_ConstrainProportionsScale: 1
@@ -672,8 +673,8 @@ Transform:
   - {fileID: 1333628958}
   - {fileID: 677049000}
   - {fileID: 1548771827}
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_Father: {fileID: 69863352}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1333628954
 GameObject:
@@ -977,7 +978,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6275155698768325079, guid: 87f1542dce52d45539cf6da90e0c5eef, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 6275155698768325079, guid: 87f1542dce52d45539cf6da90e0c5eef, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1044,62 +1045,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee54982ce26cc444db3734b02f8581ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &2000495484
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2000495486}
-  - component: {fileID: 2000495485}
-  m_Layer: 0
-  m_Name: QuestsManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &2000495485
+--- !u!114 &2000495485 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 8077020548956927593, guid: c51beea426003594e82cb0af1e3195d7, type: 3}
+  m_PrefabInstance: {fileID: 8077020549343515924}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2000495484}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 507d7caca97b03940a5aadfeeee9deeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: {fileID: 1350702724014615316}
-  day0Text: "Przenie\u015B s\u0142oiki na p\xF3\u0142k\u0119 sklepow\u0105."
-  day1Text: "Przygotuj do wyslania paczk\u0119 z produktami u\u017Cywaj\u0105c ta\u015Bmy"
-  day2Text: "Sklepu\u015B ma problem sprz\u0119towy - pom\xF3\u017C mu."
-  day3Text: ...
-  openEyes: {fileID: 1018482796}
-  dayManager: {fileID: 1632048518}
-  roomSceneName: Room
-  foodStack: {fileID: 1863315943}
-  shelfFoodPutter: {fileID: 240074484}
-  puddleController: {fileID: 1196481458}
-  boxController: {fileID: 142773480}
---- !u!4 &2000495486
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2000495484}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 745.7675, y: 450.05988, z: -178.77086}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1350702724014615315
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1259,7 +1215,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2538622515750913195, guid: acb0f3457c4388844838b0857e5bbb90, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2538622515750913195, guid: acb0f3457c4388844838b0857e5bbb90, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1304,6 +1260,93 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: acb0f3457c4388844838b0857e5bbb90, type: 3}
+--- !u!1001 &8077020549343515924
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8077020548956927592, guid: c51beea426003594e82cb0af1e3195d7, type: 3}
+      propertyPath: m_Name
+      value: QuestsManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077020548956927593, guid: c51beea426003594e82cb0af1e3195d7, type: 3}
+      propertyPath: text
+      value: 
+      objectReference: {fileID: 1350702724014615316}
+    - target: {fileID: 8077020548956927593, guid: c51beea426003594e82cb0af1e3195d7, type: 3}
+      propertyPath: openEyes
+      value: 
+      objectReference: {fileID: 1018482796}
+    - target: {fileID: 8077020548956927593, guid: c51beea426003594e82cb0af1e3195d7, type: 3}
+      propertyPath: foodStack
+      value: 
+      objectReference: {fileID: 1863315943}
+    - target: {fileID: 8077020548956927593, guid: c51beea426003594e82cb0af1e3195d7, type: 3}
+      propertyPath: dayManager
+      value: 
+      objectReference: {fileID: 1632048518}
+    - target: {fileID: 8077020548956927593, guid: c51beea426003594e82cb0af1e3195d7, type: 3}
+      propertyPath: boxController
+      value: 
+      objectReference: {fileID: 142773480}
+    - target: {fileID: 8077020548956927593, guid: c51beea426003594e82cb0af1e3195d7, type: 3}
+      propertyPath: shelfFoodPutter
+      value: 
+      objectReference: {fileID: 240074484}
+    - target: {fileID: 8077020548956927593, guid: c51beea426003594e82cb0af1e3195d7, type: 3}
+      propertyPath: puddleController
+      value: 
+      objectReference: {fileID: 1196481458}
+    - target: {fileID: 8077020548956927594, guid: c51beea426003594e82cb0af1e3195d7, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077020548956927594, guid: c51beea426003594e82cb0af1e3195d7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 745.7675
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077020548956927594, guid: c51beea426003594e82cb0af1e3195d7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 450.05988
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077020548956927594, guid: c51beea426003594e82cb0af1e3195d7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -178.77086
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077020548956927594, guid: c51beea426003594e82cb0af1e3195d7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077020548956927594, guid: c51beea426003594e82cb0af1e3195d7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077020548956927594, guid: c51beea426003594e82cb0af1e3195d7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077020548956927594, guid: c51beea426003594e82cb0af1e3195d7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077020548956927594, guid: c51beea426003594e82cb0af1e3195d7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077020548956927594, guid: c51beea426003594e82cb0af1e3195d7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077020548956927594, guid: c51beea426003594e82cb0af1e3195d7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: c51beea426003594e82cb0af1e3195d7, type: 3}
 --- !u!1001 &8323241798819396248
 PrefabInstance:
   m_ObjectHideFlags: 0

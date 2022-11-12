@@ -29,6 +29,7 @@ public class QuestsManager : MonoBehaviour
     [Space]
     [Header("Day 1 quest variables")]
     [SerializeField] private BoxController boxController;
+    [SerializeField] private WineController wineController;
 
 
 
@@ -55,7 +56,7 @@ public class QuestsManager : MonoBehaviour
             case 2:
                 {
                     text.text = day2Text;
-
+                    QuestDay2Initialize();
                     break;
                 }
             case 3:
@@ -94,6 +95,7 @@ public class QuestsManager : MonoBehaviour
         puddleController.gameObject.SetActive(false);
 
         boxController.gameObject.SetActive(true);
+        wineController.gameObject.SetActive(true);
         boxController.OnFinishQuest += FinishDay1;
 
     }
@@ -106,6 +108,30 @@ public class QuestsManager : MonoBehaviour
         boxController.OnFinishQuest -= FinishDay1;
         StartCoroutine(GoToBedroomInTime(2));
     }
+
+    private void QuestDay2Initialize()
+    {
+
+        boxController.gameObject.SetActive(false);
+        wineController.gameObject.SetActive(false);
+
+
+
+        //superKerfus.OnFinishQuest += FinishDay2;
+        //exit.OnFinishQuest += FinishDay2;
+
+    }
+
+    private void FinishDay2(bool sklepusBusted)
+    {
+
+        dayManager.FinishDay(sklepusBusted);
+        openEyes.StartClosingEyes();
+        text.text = "";
+        boxController.OnFinishQuest -= FinishDay2;
+
+    }
+
 
     private IEnumerator GoToBedroomInTime(float timeToGoThrough)
     {
