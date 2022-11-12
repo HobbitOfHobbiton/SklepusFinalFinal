@@ -28,6 +28,8 @@ public class Timer : MonoBehaviour
 
     private IEnumerator Counting()
     {
+        txtTimer.gameObject.transform.localScale = Vector3.one;
+
         if(_currentTime <= 0)
         {
             OnTimerEnded?.Invoke();
@@ -41,6 +43,7 @@ public class Timer : MonoBehaviour
         yield return new WaitForSeconds(1f);
         _currentTime--;
         txtTimer.text = ((Int32)_currentTime).ToString();
+        LeanTween.scale(txtTimer.gameObject, new Vector3(0.85f, 0.85f, 0.85f), 0.85f);
 
         StartCoroutine(Counting());
 
