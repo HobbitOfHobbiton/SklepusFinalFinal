@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -31,11 +32,25 @@ namespace Controllers
 
         #endregion
 
+        private Int32 _cleaningClicked = 0;
+        private Boolean _preventNextCleaningTickShowingDuringLastOne = false;
+        private void ShowCleaningOneTickIfApplies()
+        {
+            if (_cleaningClicked > 0)
+            {
+                _cleaningClicked--;
+                _preventNextCleaningTickShowingDuringLastOne = true;
+                Invoke(nameof(UnfreezeCleaningPrevention), 0.51f);
+                LeanTween.moveLocal(objBroom, new Vector3(objBroom.transform.localPosition.x, objBroom.transform.localPosition.y, 2.62f), 0.24f)
+                    .setLoopPingPong(1);
+            }
+        }
+        private void UnfreezeCleaningPrevention() => _preventNextCleaningTickShowingDuringLastOne = false;
+
         public void SetCanRun(bool canRun)
         {
             _movement.CanRun = canRun;
         }
-
 
         private void Start()
         {
@@ -56,7 +71,16 @@ namespace Controllers
                 _cameraController.Update();
                 _footsteps.Update();
             }
+
+            if (Input.GetKeyDown(KeyCode.E) && !_preventNextCleaningTickShowingDuringLastOne)
+            {
+                _cleaningClicked++;
+            }
+
+            ShowCleaningOneTickIfApplies();
         }
+
+
 
         private void FixedUpdate()
         {

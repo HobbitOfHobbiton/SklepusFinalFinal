@@ -375,10 +375,6 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 919132148611653236, guid: c2dac4bf1bbb3d042b8f1193685db107, type: 3}
-      propertyPath: m_Name
-      value: Broom
-      objectReference: {fileID: 0}
     - target: {fileID: 3794619107606657641, guid: c2dac4bf1bbb3d042b8f1193685db107, type: 3}
       propertyPath: m_RootOrder
       value: 1
