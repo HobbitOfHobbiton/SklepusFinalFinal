@@ -91,7 +91,7 @@ public class QuestsManager : MonoBehaviour
         puddleController.gameObject.SetActive(false);
 
         boxController.gameObject.SetActive(true);
-        shelfFoodPutter.OnFinishQuest += FinishDay1;
+        boxController.OnFinishQuest += FinishDay1;
 
     }
 

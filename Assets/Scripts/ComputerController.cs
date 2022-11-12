@@ -24,7 +24,7 @@ public class ComputerController : MonoBehaviour, IInteractable
         int sklepusBusted = PlayerPrefs.GetInt("sklepusBusted");
         if (sklepusBusted == 0)
         {
-            DisplayBadEmail();
+            DisplayBadEmail(currentDay);
         }
         else
         {
@@ -36,11 +36,11 @@ public class ComputerController : MonoBehaviour, IInteractable
         isMailTurnedOn = true;
     }
 
-    private void DisplayBadEmail()
+    private void DisplayBadEmail(int currentDay)
     {
-        texts[0].text = emailsByDays[0].fromByDay;
-        texts[1].text = emailsByDays[0].topicByDay;
-        texts[2].text = emailsByDays[0].textByDay;
+        texts[0].text = emailsByDays[currentDay].fromByDay;
+        texts[1].text = emailsByDays[currentDay].topicByDay;
+        texts[2].text = emailsByDays[currentDay].textByDay;
     }
     private void DisplayGoodEmail()
     {
