@@ -23,7 +23,7 @@ public class QuestsManager : MonoBehaviour
 
     [Space]
     [Header("Day 1 quest variables")]
-    [SerializeField] private PuddleController puddleController;
+    [SerializeField] private BoxController boxController;
 
 
 
@@ -83,7 +83,7 @@ public class QuestsManager : MonoBehaviour
         foodStack.gameObject.SetActive(false);
         shelfFoodPutter.gameObject.SetActive(false);
 
-        puddleController.gameObject.SetActive(true);
+        boxController.gameObject.SetActive(true);
         shelfFoodPutter.OnFinishQuest += FinishDay1;
 
     }
@@ -92,7 +92,7 @@ public class QuestsManager : MonoBehaviour
     {
         openEyes.StartClosingEyes();
         text.text = "";
-        shelfFoodPutter.OnFinishQuest -= FinishDay1;
+        boxController.OnFinishQuest -= FinishDay1;
         StartCoroutine(GoToBedroomInTime(2));
     }
 
