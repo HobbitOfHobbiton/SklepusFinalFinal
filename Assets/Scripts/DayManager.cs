@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,7 +8,10 @@ public class DayManager : MonoBehaviour
     private int currentDay;
     [SerializeField] private int maxDay = 3;
     [SerializeField] OpenEyes openEyes;
+    [SerializeField] Sklepus sklepus;
     [SerializeField] QuestsManager questsManager;
+
+    public const Single DAY_TIME = 20f;
 
     private void Awake()
     {
@@ -24,6 +28,7 @@ public class DayManager : MonoBehaviour
     {
         Debug.Log("Current day: " + currentDay);
         openEyes.StartOpeningEyes();
+        sklepus.PlayDaySequence(currentDay);
         questsManager.DisplayQuestFromDay(currentDay);
     }
 
