@@ -2,17 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ShelfFoodPutter : MonoBehaviour
+public class ShelfFoodPutter : MonoBehaviour, IInteractable
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private List<GameObject> targetObjects = new List<GameObject>();
+    [SerializeField] private Material targetMaterial;
+    int currentProduct = 0;
+
+    public void Interact()
     {
-        
+        PutProductOnShelf();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void PutProductOnShelf()
     {
-        
+        if (currentProduct >= targetObjects.Count) return;
+
+        targetObjects[currentProduct].GetComponent<MeshRenderer>().material = targetMaterial;
+        currentProduct++;
     }
 }
