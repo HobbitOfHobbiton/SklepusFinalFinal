@@ -18,6 +18,8 @@ namespace Controllers
         private PlayerReferences _playerReferences;
         private PlayerManager _playerManager;
 
+        public GameObject objBroom;
+
         [Space]
         [SerializeField] private Movement _movement;
         [SerializeField] private CameraController _cameraController;
