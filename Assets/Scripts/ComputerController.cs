@@ -13,6 +13,10 @@ public class ComputerController : MonoBehaviour, IInteractable
     [SerializeField] private Email goodInfoEmail;
     [SerializeField] private List<Email> emailsByDays = new List<Email>();
     [SerializeField] private List<TMP_Text> texts = new List<TMP_Text>();
+    
+    [Space]
+    [SerializeField] private string sceneSceneName = "MallMaciek";
+
 
     bool isMailTurnedOn = false;
     public void Interact()
@@ -71,7 +75,7 @@ public class ComputerController : MonoBehaviour, IInteractable
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                SceneManager.LoadScene("MallMaciek", LoadSceneMode.Single);
+                SceneManager.LoadScene(sceneSceneName, LoadSceneMode.Single);
             }
         }
     }

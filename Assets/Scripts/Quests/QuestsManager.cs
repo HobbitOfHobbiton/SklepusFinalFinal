@@ -18,6 +18,9 @@ public class QuestsManager : MonoBehaviour
     [SerializeField] private DayManager dayManager;
 
     [Space]
+    [SerializeField] private string roomSceneName = "Room";
+
+    [Space]
     [Header("Day 0 quest variables")]
     [SerializeField] private FoodstackController foodStack;
     [SerializeField] private ShelfFoodPutter shelfFoodPutter;
@@ -32,7 +35,7 @@ public class QuestsManager : MonoBehaviour
     public void DisplayQuestFromDay(int day)
     {
         Debug.Log("init " + day);
-
+        if (SceneManager.GetActiveScene().name == roomSceneName) return;
         switch (day)
         {
             case 0:
@@ -107,7 +110,7 @@ public class QuestsManager : MonoBehaviour
     private IEnumerator GoToBedroomInTime(float timeToGoThrough)
     {
         yield return new WaitForSeconds(timeToGoThrough);
-        SceneManager.LoadScene("Room", LoadSceneMode.Single);
+        SceneManager.LoadScene(roomSceneName, LoadSceneMode.Single);
         yield return null;
     }
 }
