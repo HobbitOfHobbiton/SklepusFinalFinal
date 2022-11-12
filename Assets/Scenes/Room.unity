@@ -2137,6 +2137,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 7571f1b1c2f236f4a9fc26ceaef1e112, type: 2}
+    - target: {fileID: -7511558181221131132, guid: c962de5b8a45445b4ae2c6b997f2eafd, type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: e800c10b8c3e34361b129d47f8d0bb56, type: 2}
     - target: {fileID: 919132149155446097, guid: c962de5b8a45445b4ae2c6b997f2eafd, type: 3}
       propertyPath: m_Name
       value: door
@@ -2677,14 +2681,20 @@ MonoBehaviour:
   notificationScreen: {fileID: 453911914}
   image: {fileID: 414613995}
   goodInfoEmail:
-    textByDay: 
-    topicByDay: 
-    fromByDay: 
+    textByDay: Dzisiaj zaobserwowalem, ze pomagasz naszemu nowemu wspolpraocownikowi
+      - Kerfusiowi. Tak trzymaj!
+    topicByDay: Dobra robota!
+    fromByDay: Kierownik
   emailsByDays:
   - textByDay: "Dzisiaj na dziale rybnym starsza Pani z\u0142ama\u0142a kostk\u0119.
-      Ty by\u0142e\u015B odpowiedzialny za Sklepusia.  \t\t\t\t      \t\t\t\t   W
-      Y L A T U J E S Z !"
+      Dlaczego by\u0142a tam rozlana woda?! \t\t\t\t      \t\t\t\t   W Y L A T U
+      J E S Z !"
     topicByDay: Wypadek na dziale rybnym
+    fromByDay: Kierownik
+  - textByDay: "Czy to ty podstawi\u0142e\u015B butelki na dziale z alkoholem w taki
+      spos\xF3b, \u017Ce spad\u0142y na g\u0142ow\u0119 naszemu klientowi?! STRACI\u0141E\u015A
+      PRAC\u0118 CH\u0141OPIE"
+    topicByDay: Wypadek z winem
     fromByDay: Kierownik
   texts:
   - {fileID: 414613994}
