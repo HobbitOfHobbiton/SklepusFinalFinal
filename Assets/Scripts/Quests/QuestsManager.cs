@@ -14,11 +14,16 @@ public class QuestsManager : MonoBehaviour
     [SerializeField] string day3Text = "Sklepuœ ma problem sprzêtowy - pomó¿ mu.";
 
     [Space]
-    [Header("Day0 quest variables")]
-    [SerializeField] private FoodstackController foodStack;
-    [SerializeField] private ShelfFoodPutter shelfFoodPutter;
     [SerializeField] private OpenEyes openEyes;
 
+    [Space]
+    [Header("Day 0 quest variables")]
+    [SerializeField] private FoodstackController foodStack;
+    [SerializeField] private ShelfFoodPutter shelfFoodPutter;
+
+    [Space]
+    [Header("Day 1 quest variables")]
+    [SerializeField] private BoxController boxController;
 
 
 
@@ -62,14 +67,14 @@ public class QuestsManager : MonoBehaviour
         foodStack.gameObject.SetActive(true);
         foodStack.InititializeFoodstack();
         shelfFoodPutter.gameObject.SetActive(true);
-        shelfFoodPutter.OnFinishQuest += FinishDay1;
+        shelfFoodPutter.OnFinishQuest += FinishDay0;
     }
 
-    private void FinishDay1()
+    private void FinishDay0()
     {
         openEyes.StartClosingEyes();
         text.text = "";
-        shelfFoodPutter.OnFinishQuest -= FinishDay1;
+        shelfFoodPutter.OnFinishQuest -= FinishDay0;
         StartCoroutine(GoToBedroomInTime(2));
     }
 
@@ -77,8 +82,19 @@ public class QuestsManager : MonoBehaviour
     {
         foodStack.gameObject.SetActive(false);
         shelfFoodPutter.gameObject.SetActive(false);
+
+        boxController.gameObject.SetActive(true);
+        shelfFoodPutter.OnFinishQuest += FinishDay1;
+
     }
 
+    private void FinishDay1()
+    {
+        openEyes.StartClosingEyes();
+        text.text = "";
+        boxController.OnFinishQuest -= FinishDay1;
+        StartCoroutine(GoToBedroomInTime(2));
+    }
 
     private IEnumerator GoToBedroomInTime(float timeToGoThrough)
     {
