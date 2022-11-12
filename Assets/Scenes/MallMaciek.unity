@@ -2028,7 +2028,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1196481456
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2072,8 +2072,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e0e981fccfd0fb40938cbf83041a967, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  puddleObject: {fileID: 919132147561640068}
-  numberOfPuddleLevels: 4
 --- !u!1 &1198881342
 GameObject:
   m_ObjectHideFlags: 0
@@ -2934,6 +2932,17 @@ Transform:
   m_Father: {fileID: 1198881346}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1632048518 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8323241799063968909, guid: c441da62d7931534384623edb9a61b5d, type: 3}
+  m_PrefabInstance: {fileID: 8323241798819396248}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 281fdf6c4ecd22040aa7114077172390, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1696445368
 GameObject:
   m_ObjectHideFlags: 0
@@ -3716,7 +3725,7 @@ MonoBehaviour:
   day2Text: "Wyczy\u015B\u0107 rega\u0142 z makaronami."
   day3Text: "Sklepu\u015B ma problem sprz\u0119towy - pom\xF3\u017C mu."
   openEyes: {fileID: 1018482796}
-  dayManager: {fileID: 0}
+  dayManager: {fileID: 1632048518}
   foodStack: {fileID: 1863315943}
   shelfFoodPutter: {fileID: 240074484}
   puddleController: {fileID: 1196481458}

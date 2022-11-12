@@ -20,12 +20,33 @@ public class ComputerController : MonoBehaviour, IInteractable
         if (isMailTurnedOn) return;
 
         int currentDay = PlayerPrefs.GetInt("currentDay", 0);
-        texts[0].text = emailsByDays[0].fromByDay;
-        texts[1].text = emailsByDays[0].topicByDay;
-        texts[2].text = emailsByDays[0].textByDay;
+
+        int sklepusBusted = PlayerPrefs.GetInt("sklepusBusted");
+        if (sklepusBusted == 0)
+        {
+            DisplayBadEmail();
+        }
+        else
+        {
+            DisplayGoodEmail();
+        }
+
         image.gameObject.SetActive(true);
         StartCoroutine(CooldownForGoingToNextLevel());
         isMailTurnedOn = true;
+    }
+
+    private void DisplayBadEmail()
+    {
+        texts[0].text = emailsByDays[0].fromByDay;
+        texts[1].text = emailsByDays[0].topicByDay;
+        texts[2].text = emailsByDays[0].textByDay;
+    }
+    private void DisplayGoodEmail()
+    {
+        texts[0].text = goodInfoEmail.fromByDay;
+        texts[1].text = goodInfoEmail.topicByDay;
+        texts[2].text = goodInfoEmail.textByDay;
     }
 
     private void Awake()

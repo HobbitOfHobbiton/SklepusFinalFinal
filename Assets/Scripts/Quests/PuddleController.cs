@@ -7,20 +7,29 @@ public class PuddleController : MonoBehaviour, IInteractable, IQuestiable
 {
     public event Action<bool> OnFinishQuest = delegate { };
 
-    [SerializeField] private int numberOfPuddleLevels = 3;
+    private int numberOfPuddleLevels = 3;
     private int currentPuddleLevel = 0;
+    bool cleaned = false;
 
+    private void Awake()
+    {
+        currentPuddleLevel = 0;
+        numberOfPuddleLevels = transform.childCount;
+    }
     public void Interact()
     {
+        if (cleaned) return;
         transform.GetChild(currentPuddleLevel).gameObject.SetActive(false);
         currentPuddleLevel++;
-        if(currentPuddleLevel<= numberOfPuddleLevels - 1)
+        if(currentPuddleLevel >= numberOfPuddleLevels)
         {
-            transform.GetChild(currentPuddleLevel).gameObject.SetActive(true);
+            cleaned = true;
+            OnFinishQuest(true);
+            gameObject.SetActive(false);
         }
         else
         {
-            OnFinishQuest(true);
+            transform.GetChild(currentPuddleLevel).gameObject.SetActive(true);
         }
     }
 

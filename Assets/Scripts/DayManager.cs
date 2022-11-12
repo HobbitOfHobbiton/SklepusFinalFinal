@@ -42,8 +42,11 @@ public class DayManager : MonoBehaviour
     public void FinishDay(bool sklepusBusted)
     {
         openEyes.StartClosingEyes();
-        if(sklepusBusted)
+        if (sklepusBusted)
+        {
+            InitiateSubsequentDay();
             PlayerPrefs.SetInt("sklepusBusted", 1);
+        }
         else
             PlayerPrefs.SetInt("sklepusBusted", 0);
 
