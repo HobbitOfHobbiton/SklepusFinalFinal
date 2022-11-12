@@ -44,6 +44,10 @@ public class MenuController : MonoBehaviour
         StartCoroutine(AngrySmile());
     }
 
+    public void ShowIntro()
+    {
+
+    }
 
     // Update is called once per frame
     void Update()
