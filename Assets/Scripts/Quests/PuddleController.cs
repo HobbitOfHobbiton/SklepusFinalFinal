@@ -5,24 +5,23 @@ using UnityEngine;
 
 public class PuddleController : MonoBehaviour, IInteractable, IQuestiable
 {
-    public event Action OnFinishQuest = delegate { };
+    public event Action<bool> OnFinishQuest = delegate { };
 
-    [SerializeField] private GameObject puddleObject;
-
-    [SerializeField] private int numberOfPuddleLevels = 4;
+    [SerializeField] private int numberOfPuddleLevels = 3;
     private int currentPuddleLevel = 0;
 
     public void Interact()
     {
+        transform.GetChild(currentPuddleLevel).gameObject.SetActive(false);
         currentPuddleLevel++;
-        Vector3 size = puddleObject.transform.localScale;
-        size.z *= 0.5f;
-        size.x *= 0.5f;
-        puddleObject.transform.localScale = size;
-        
-        if (currentPuddleLevel >= numberOfPuddleLevels - 1)
-            OnFinishQuest();
-
+        if(currentPuddleLevel<= numberOfPuddleLevels - 1)
+        {
+            transform.GetChild(currentPuddleLevel).gameObject.SetActive(true);
+        }
+        else
+        {
+            OnFinishQuest(true);
+        }
     }
 
 

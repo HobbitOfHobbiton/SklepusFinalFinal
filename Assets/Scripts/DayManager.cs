@@ -39,9 +39,14 @@ public class DayManager : MonoBehaviour
 
     }
 
-    private void FinishDay(bool sklepusBusted)
+    public void FinishDay(bool sklepusBusted)
     {
         openEyes.StartClosingEyes();
+        if(sklepusBusted)
+            PlayerPrefs.SetInt("sklepusBusted", 1);
+        else
+            PlayerPrefs.SetInt("sklepusBusted", 0);
+
         //Load Room scene
 
     }

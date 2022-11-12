@@ -11,7 +11,7 @@ public class ShelfFoodPutter : MonoBehaviour, IInteractable, IQuestiable
     [SerializeField] private HandHolder handHolder;
 
     int currentProduct = 0;
-    public event Action OnFinishQuest = delegate { };
+    public event Action<bool> OnFinishQuest = delegate { };
 
     public void Interact()
     {
@@ -32,7 +32,7 @@ public class ShelfFoodPutter : MonoBehaviour, IInteractable, IQuestiable
         {
             Debug.Log("OnFinishQuest");
 
-            OnFinishQuest();
+            OnFinishQuest(false);
         }
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class BoxController : MonoBehaviour, IInteractable, IQuestiable
 {
-    public event Action OnFinishQuest;
+    public event Action<bool> OnFinishQuest;
 
     [SerializeField] private int numberOfBoxLevels = 4;
     [SerializeField] private GameObject closedBox;
@@ -20,7 +20,7 @@ public class BoxController : MonoBehaviour, IInteractable, IQuestiable
         {
             closedBox.SetActive(true);
             openBox.SetActive(false);
-            OnFinishQuest();
+            OnFinishQuest(false);
         }
     }
 }

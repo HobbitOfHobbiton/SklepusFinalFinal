@@ -5,5 +5,5 @@ using UnityEngine;
 
 public interface IQuestiable
 {
-    public event Action OnFinishQuest;
+    public event Action<bool> OnFinishQuest;
 }
