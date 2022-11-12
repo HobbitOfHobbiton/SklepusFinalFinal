@@ -51,7 +51,7 @@ public class Sklepus : MonoBehaviour
             _todayPath = DayOnePath;
             EmitBlood();
         }
-
+        if (_todayPath[0] == null) return;
         LTDescr lt = LeanTween.moveSpline(gameObject, _todayPath.Select(point => new Vector3(point.transform.position.x,
             transform.position.y, point.transform.position.z)).ToArray(), DayManager.DAY_TIME);
 
