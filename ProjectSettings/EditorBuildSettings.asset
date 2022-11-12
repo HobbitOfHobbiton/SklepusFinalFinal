@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MallMaciek.unity
+    guid: 88348637615c3f14281c0d7e514b86f4
+  - enabled: 1
+    path: Assets/Scenes/Room.unity
+    guid: 49d3036717707497e90275dd4930c9b5
   m_configObjects: {}
