@@ -1,3 +1,4 @@
+using Controllers;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -104,7 +105,16 @@ public class QuestsManager : MonoBehaviour
     {
         Timer.OnTimerEnded += () => FinishDay0(false);
 
-        player.transform.position = placeOfSpawnPlayer.position;
+        player.GetComponent<PlayerController>().IsLocked = true;
+        LeanTween.delayedCall(0.01f, () =>
+        {
+            player.transform.position = placeOfSpawnPlayer.position;
+            LeanTween.delayedCall(0.2f, () =>
+            {
+                player.GetComponent<PlayerController>().IsLocked = false;
+            });
+
+        });
         sklepus.transform.position = placeOfSpawnSklepus.position;
 
         foodStack.gameObject.SetActive(false);
