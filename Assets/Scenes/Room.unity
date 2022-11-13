@@ -2400,6 +2400,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 414613995}
     - target: {fileID: 6566961207708010701, guid: 00de2bde208227741a84e2bd77d331e2, type: 3}
+      propertyPath: sceneSceneName
+      value: Wobloblo
+      objectReference: {fileID: 0}
+    - target: {fileID: 6566961207708010701, guid: 00de2bde208227741a84e2bd77d331e2, type: 3}
       propertyPath: texts.Array.data[0]
       value: 
       objectReference: {fileID: 414613994}
