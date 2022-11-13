@@ -37,7 +37,23 @@ public class QuestsManager : MonoBehaviour
     [SerializeField] private Transform placeOfSpawnPlayer;
     [SerializeField] private Transform placeOfSpawnSklepus;
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            player.GetComponent<PlayerController>().IsLocked = true;
 
+            LeanTween.delayedCall(0.01f, () =>
+            {
+                player.transform.position = placeOfSpawnPlayer.position;
+                LeanTween.delayedCall(0.2f, () =>
+                {
+                    player.GetComponent<PlayerController>().IsLocked = false;
+                });
+
+            });
+        }
+    }
 
     public void DisplayQuestFromDay(int day)
     {
@@ -124,6 +140,7 @@ public class QuestsManager : MonoBehaviour
         boxController.gameObject.SetActive(true);
         wineController.gameObject.SetActive(true);
         wineController.OnFinishQuest += FinishDay1;
+        boxController.OnFinishQuest += FinishDay1;
 
     }
 
