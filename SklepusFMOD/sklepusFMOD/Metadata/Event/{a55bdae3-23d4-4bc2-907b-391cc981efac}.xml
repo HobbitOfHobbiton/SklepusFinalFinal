@@ -5,7 +5,7 @@
 			<value>Mall Music</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{0ebe443e-5841-40ff-a7c5-b7d44998bb5a}</destination>
@@ -116,7 +116,6 @@
 	<object class="MixerBusEffectChain" id="{a621530c-d8de-4153-81dc-4d19c47a662b}">
 		<relationship name="effects">
 			<destination>{67b4c6dd-a9e9-47c8-9f48-b10c437fc56e}</destination>
-			<destination>{730f818e-8170-4260-853d-65e300c6c10a}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{91a586f1-5822-4baa-9592-13b6dad1e407}" />
@@ -128,6 +127,5 @@
 	</object>
 	<object class="MixerBusPanner" id="{2f994734-7248-471b-b15d-4dbcf6bba09e}" />
 	<object class="MixerBusFader" id="{67b4c6dd-a9e9-47c8-9f48-b10c437fc56e}" />
-	<object class="SpatialiserEffect" id="{730f818e-8170-4260-853d-65e300c6c10a}" />
 	<object class="MixerBusFader" id="{40b80b78-5e66-4599-b112-57c8b901e668}" />
 </objects>

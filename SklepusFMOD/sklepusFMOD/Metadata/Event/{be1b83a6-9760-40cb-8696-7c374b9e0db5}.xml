@@ -5,7 +5,7 @@
 			<value>Supermarket Sound Effects</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{0ebe443e-5841-40ff-a7c5-b7d44998bb5a}</destination>
@@ -116,7 +116,6 @@
 	<object class="MixerBusEffectChain" id="{fe0edc1a-b952-4aab-a2a0-0a646e3da2c1}">
 		<relationship name="effects">
 			<destination>{dff326ac-92f7-47f4-ae5d-1f89b42607ee}</destination>
-			<destination>{7b6e3f0f-5958-458b-8c4f-fe5267529a2e}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{182dda87-9d98-43ed-8cbf-72118a3b1b10}" />
@@ -128,6 +127,5 @@
 	</object>
 	<object class="MixerBusPanner" id="{827acf9d-3a6e-47ec-aca6-bcfd748fe334}" />
 	<object class="MixerBusFader" id="{dff326ac-92f7-47f4-ae5d-1f89b42607ee}" />
-	<object class="SpatialiserEffect" id="{7b6e3f0f-5958-458b-8c4f-fe5267529a2e}" />
 	<object class="MixerBusFader" id="{ccda6aad-5611-4b85-87c6-7fe4c9cecaa4}" />
 </objects>

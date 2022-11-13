@@ -21,11 +21,12 @@ public class ComputerController : MonoBehaviour, IInteractable
 
     int sklepusBusted;
     bool isMailTurnedOn = false;
+    int currentDay;
     public void Interact()
     {
         if (isMailTurnedOn) return;
 
-        int currentDay = PlayerPrefs.GetInt("currentDay", 0);
+        currentDay = PlayerPrefs.GetInt("currentDay", 0);
 
         sklepusBusted = PlayerPrefs.GetInt("sklepusBusted");
         if (sklepusBusted == 0)
@@ -92,7 +93,14 @@ public class ComputerController : MonoBehaviour, IInteractable
                 }
                 else
                 {
-                    SceneManager.LoadScene(sceneSceneName, LoadSceneMode.Single);
+                    if (currentDay == 2)
+                    {
+                        SceneManager.LoadScene("Wobloblo[LOCKED by Pawel]", LoadSceneMode.Single);
+                    }
+                    else
+                    {
+                        SceneManager.LoadScene(sceneSceneName, LoadSceneMode.Single);
+                    }
                 }
             }
         }
