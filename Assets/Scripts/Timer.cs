@@ -10,7 +10,7 @@ public class Timer : MonoBehaviour
 {
     public TextMeshProUGUI txtTimer;
 
-    private Single _currentTime = 20;
+    private Single _currentTime = 30;
 
     private QuestsManager questManager;
 
