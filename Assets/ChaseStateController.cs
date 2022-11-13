@@ -32,4 +32,10 @@ public class ChaseStateController : MonoBehaviour
         sklepusBig.gameObject.SetActive(true);
     }
 
+    public void DisableSklepusys()
+    {
+        sklepusBig.gameObject.SetActive(false);
+        sklepusSmall.gameObject.SetActive(false);
+    }
+
 }
