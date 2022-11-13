@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 //using HobbitUtilities;
 using FMODUnity;
+using Unity.VisualScripting.FullSerializer;
 
 namespace Controllers
 {
@@ -29,6 +30,7 @@ namespace Controllers
 
         public void Update()
         {
+            //Debug.Log("test");
             UpdateFootsteps(_playerController.CameraController.HeadBob.BobCycle);
         }
 
