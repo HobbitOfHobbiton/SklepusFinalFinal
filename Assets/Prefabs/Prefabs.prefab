@@ -1,5 +1,67 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &352017455555642458
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7495248166976062107}
+  m_Layer: 0
+  m_Name: PlaceOfSpawnPlayer_Day1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7495248166976062107
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352017455555642458}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -53.094276, y: -38.149746, z: -17.994793}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3142762644468227759}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &707296095373863112
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7737321534946114927}
+  m_Layer: 0
+  m_Name: PlaceOfSpawnSklepus_Day1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7737321534946114927
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707296095373863112}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -53.094276, y: -38.149746, z: -17.994793}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3142762644468227759}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8378851036465062162
 GameObject:
   m_ObjectHideFlags: 0
@@ -34,8 +96,10 @@ Transform:
   - {fileID: 600815912246598965}
   - {fileID: 6591913318334304223}
   - {fileID: 7710014669456967500}
+  - {fileID: 7495248166976062107}
+  - {fileID: 7737321534946114927}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3410356705553181395
 PrefabInstance:
@@ -548,6 +612,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5481815868702656546}
     - target: {fileID: 8077020548956927593, guid: c51beea426003594e82cb0af1e3195d7, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 8665437535561743367}
+    - target: {fileID: 8077020548956927593, guid: c51beea426003594e82cb0af1e3195d7, type: 3}
+      propertyPath: sklepus
+      value: 
+      objectReference: {fileID: 810596065687165366}
+    - target: {fileID: 8077020548956927593, guid: c51beea426003594e82cb0af1e3195d7, type: 3}
       propertyPath: openEyes
       value: 
       objectReference: {fileID: 7710014670309834828}
@@ -571,6 +643,14 @@ PrefabInstance:
       propertyPath: puddleController
       value: 
       objectReference: {fileID: 6591913319106793474}
+    - target: {fileID: 8077020548956927593, guid: c51beea426003594e82cb0af1e3195d7, type: 3}
+      propertyPath: placeOfSpawnPlayer
+      value: 
+      objectReference: {fileID: 7495248166976062107}
+    - target: {fileID: 8077020548956927593, guid: c51beea426003594e82cb0af1e3195d7, type: 3}
+      propertyPath: placeOfSpawnSklepus
+      value: 
+      objectReference: {fileID: 7737321534946114927}
     - target: {fileID: 8077020548956927594, guid: c51beea426003594e82cb0af1e3195d7, type: 3}
       propertyPath: m_RootOrder
       value: -1

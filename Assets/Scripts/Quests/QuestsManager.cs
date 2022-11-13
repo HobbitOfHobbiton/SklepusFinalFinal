@@ -17,6 +17,8 @@ public class QuestsManager : MonoBehaviour
     [SerializeField] private OpenEyes openEyes;
     [SerializeField] private DayManager dayManager;
     [SerializeField] private bool isRoom = false;
+    [SerializeField] private GameObject player;
+    [SerializeField] private Sklepus sklepus;
 
     [Space]
     [SerializeField] private string roomSceneName = "Room";
@@ -31,6 +33,8 @@ public class QuestsManager : MonoBehaviour
     [Header("Day 1 quest variables")]
     [SerializeField] private BoxController boxController;
     [SerializeField] private WineController wineController;
+    [SerializeField] private Transform placeOfSpawnPlayer;
+    [SerializeField] private Transform placeOfSpawnSklepus;
 
 
 
@@ -94,6 +98,9 @@ public class QuestsManager : MonoBehaviour
 
     private void QuestDay1Initialize()
     {
+        player.transform.position = placeOfSpawnPlayer.position;
+        sklepus.transform.position = placeOfSpawnSklepus.position;
+
         foodStack.gameObject.SetActive(false);
         shelfFoodPutter.gameObject.SetActive(false);
         puddleController.gameObject.SetActive(false);
