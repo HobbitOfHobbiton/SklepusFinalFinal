@@ -21,7 +21,6 @@ public class RoomSetup : MonoBehaviour
     void Start()
     {
         Int32 flavor = PlayerPrefs.GetInt(ROOM_ENTERING_FLAVOR_KEY, 0);
-        flavor = 0;
 
         if (flavor == 0)//return from job
         {

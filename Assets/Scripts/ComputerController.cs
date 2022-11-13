@@ -13,11 +13,13 @@ public class ComputerController : MonoBehaviour, IInteractable
     [SerializeField] private Email goodInfoEmail;
     [SerializeField] private List<Email> emailsByDays = new List<Email>();
     [SerializeField] private List<TMP_Text> texts = new List<TMP_Text>();
-    
+    [SerializeField] private DoorInRoomController doorInRoomController;
+
     [Space]
     [SerializeField] private string sceneSceneName = "MallMaciek";
+    [SerializeField] private string roomSceneName = "Room";
 
-
+    int sklepusBusted;
     bool isMailTurnedOn = false;
     public void Interact()
     {
@@ -25,13 +27,16 @@ public class ComputerController : MonoBehaviour, IInteractable
 
         int currentDay = PlayerPrefs.GetInt("currentDay", 0);
 
-        int sklepusBusted = PlayerPrefs.GetInt("sklepusBusted");
+        sklepusBusted = PlayerPrefs.GetInt("sklepusBusted");
         if (sklepusBusted == 0)
         {
+            PlayerPrefs.SetInt(RoomSetup.ROOM_ENTERING_FLAVOR_KEY, 1);
+
             DisplayBadEmail(currentDay);
         }
         else
         {
+
             DisplayGoodEmail();
         }
 
@@ -60,6 +65,12 @@ public class ComputerController : MonoBehaviour, IInteractable
 
     private void Start()
     {
+        if (PlayerPrefs.GetInt(RoomSetup.ROOM_ENTERING_FLAVOR_KEY, 1) == 1)
+        {
+            doorInRoomController.gameObject.SetActive(true);
+            gameObject.SetActive(false);
+            return;
+        }
         Invoke(nameof(TurnOnScreen),0.1f);
     }
 
@@ -75,7 +86,14 @@ public class ComputerController : MonoBehaviour, IInteractable
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                SceneManager.LoadScene(sceneSceneName, LoadSceneMode.Single);
+                if (sklepusBusted == 0)
+                {
+                    SceneManager.LoadScene(roomSceneName, LoadSceneMode.Single);
+                }
+                else
+                {
+                    SceneManager.LoadScene(sceneSceneName, LoadSceneMode.Single);
+                }
             }
         }
     }
