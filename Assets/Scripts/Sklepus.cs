@@ -20,6 +20,7 @@ public class Sklepus : MonoBehaviour
     private Boolean _emitBlood;
     private void EmitBlood()
     {
+        if (!gameObject.activeSelf) return;
         _emitBlood = true;
         _bloodParentAfterSpawn = new GameObject();
         _bloodParentAfterSpawn.name = "Bloods";
@@ -44,6 +45,7 @@ public class Sklepus : MonoBehaviour
 
     public void PlayDaySequence(Int32 day)
     {
+        if (!gameObject.activeSelf) return;
 
         if (day == 0)
         {

@@ -140,12 +140,7 @@ public class QuestsManager : MonoBehaviour
 
     private void QuestDay2Initialize()
     {
-        Timer.OnTimerEnded += () => FinishDay0(false);
-
-        boxController.gameObject.SetActive(false);
-        wineController.gameObject.SetActive(false);
-
-
+        //Timer.OnTimerEnded += () => FinishDay0(false);
 
         //superKerfus.OnFinishQuest += FinishDay2;
         //exit.OnFinishQuest += FinishDay2;
