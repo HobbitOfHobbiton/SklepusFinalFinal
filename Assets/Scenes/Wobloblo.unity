@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4452331, g: 0.48915774, b: 0.5431995, a: 1}
+  m_IndirectSpecularColor: {r: 0.44523352, g: 0.4891585, b: 0.5432003, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: 711db2d11fe979e45936d5f88c490295, type: 2}
   m_LightingSettings: {fileID: 1936335882}
 --- !u!196 &4
 NavMeshSettings:
@@ -41029,7 +41029,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-32718
+  m_Name: pb_Mesh68080
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -49024,7 +49024,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-42670
+  m_Name: pb_Mesh68004
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -59012,7 +59012,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29130
+  m_Name: pb_Mesh68048
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -59507,7 +59507,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29290
+  m_Name: pb_Mesh68648
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -100358,14 +100358,14 @@ LightingSettings:
   m_AlbedoBoost: 1
   m_IndirectOutputScale: 1
   m_UsingShadowmask: 1
-  m_BakeBackend: 1
+  m_BakeBackend: 2
   m_LightmapMaxSize: 1024
   m_BakeResolution: 20
   m_Padding: 2
   m_LightmapCompression: 3
   m_AO: 1
   m_AOMaxDistance: 1
-  m_CompAOExponent: 2
+  m_CompAOExponent: 1
   m_CompAOExponentDirect: 0
   m_ExtractAO: 0
   m_MixedBakeMode: 2
@@ -100824,7 +100824,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29178
+  m_Name: pb_Mesh68160
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -107001,7 +107001,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh29164
+  m_Name: pb_Mesh68146
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
