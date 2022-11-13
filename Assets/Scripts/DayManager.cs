@@ -47,7 +47,12 @@ public class DayManager : MonoBehaviour
 
         currentDayText.gameObject.SetActive(true);
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1f);
+        AudioManager.Instance.PlayMallAmbient();
+        yield return new WaitForSeconds(1f);
+        AudioManager.Instance.PlayMallMusic();
+        yield return new WaitForSeconds(1f);
+
 
         currentDayText.gameObject.SetActive(false);
 
@@ -64,14 +69,19 @@ public class DayManager : MonoBehaviour
     public void FinishDay(bool sklepusBusted)
     {
         openEyes.StartClosingEyes();
+        PlayerPrefs.SetInt(RoomSetup.ROOM_ENTERING_FLAVOR_KEY, 0);
+
         if (sklepusBusted)
         {
             InitiateSubsequentDay();
             PlayerPrefs.SetInt("sklepusBusted", 1);
+
         }
         else
+        {
             PlayerPrefs.SetInt("sklepusBusted", 0);
 
+        }
         //Load Room scene
 
     }

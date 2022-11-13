@@ -13,6 +13,11 @@ public class FlickeringLightController : MonoBehaviour
     {
         lightSource = gameObject.GetComponent<Light>();
     }
+
+    public void SwitchLight(bool on)
+    {
+        lightSource.enabled = on;
+    }
     
     private void Update()
     {
