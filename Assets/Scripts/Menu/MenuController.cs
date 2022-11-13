@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MenuController : MonoBehaviour
@@ -26,6 +27,11 @@ public class MenuController : MonoBehaviour
         objIntro.SetActive(false);
         objIntro.GetComponent<Image>().color = new Color(24f / 255f, 24f / 255f, 24f / 255f, 0f);
         StartCoroutine(AngrySmile());
+    }
+
+    public void startgame()
+    {
+        SceneManager.LoadScene("MallFinalFinal", LoadSceneMode.Single);
     }
 
     Boolean isSmile = true;

@@ -1167,7 +1167,7 @@ MonoBehaviour:
   image: {fileID: 0}
   goodInfoEmail:
     textByDay: Dzisiaj zaobserwowalem, ze pomagasz naszemu nowemu wspolpraocownikowi
-      - Kerfusiowi. Tak trzymaj!
+      - Sklepusiowi. Tak trzymaj!
     topicByDay: Dobra robota!
     fromByDay: Kierownik
   emailsByDays:
