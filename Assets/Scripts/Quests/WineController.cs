@@ -10,8 +10,8 @@ public class WineController : MonoBehaviour, IInteractable, IQuestiable
 
     public void Interact()
     {
-        bottle.SetActive(false);
         OnFinishQuest(true);
+        bottle.SetActive(false);
     }
 
 

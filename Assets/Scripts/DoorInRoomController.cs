@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class DoorInRoomController : MonoBehaviour, IInteractable
 {
-    [SerializeField] private string sceneSceneName = "Wobloblo";
+    [SerializeField] private string sceneSceneName = "MallFinalFinal";
 
     public void Interact()
     {

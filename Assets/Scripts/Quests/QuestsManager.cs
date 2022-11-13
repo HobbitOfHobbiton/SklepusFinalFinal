@@ -1,3 +1,4 @@
+using Controllers;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -84,6 +85,8 @@ public class QuestsManager : MonoBehaviour
         puddleController.gameObject.SetActive(true);
         shelfFoodPutter.OnFinishQuest += FinishDay0;
         puddleController.OnFinishQuest += FinishDay0;
+        Timer.OnTimerEnded += () => FinishDay0(false);
+
     }
 
     private void FinishDay0(bool sklepusBusted)
@@ -93,12 +96,25 @@ public class QuestsManager : MonoBehaviour
         text.text = "";
         shelfFoodPutter.OnFinishQuest -= FinishDay0;
         puddleController.OnFinishQuest -= FinishDay0;
+        Timer.OnTimerEnded -= () => FinishDay0(false);
+
         StartCoroutine(GoToBedroomInTime(2));
     }
 
     private void QuestDay1Initialize()
     {
-        player.transform.position = placeOfSpawnPlayer.position;
+        Timer.OnTimerEnded += () => FinishDay0(false);
+
+        player.GetComponent<PlayerController>().IsLocked = true;
+        LeanTween.delayedCall(0.01f, () =>
+        {
+            player.transform.position = placeOfSpawnPlayer.position;
+            LeanTween.delayedCall(0.2f, () =>
+            {
+                player.GetComponent<PlayerController>().IsLocked = false;
+            });
+
+        });
         sklepus.transform.position = placeOfSpawnSklepus.position;
 
         foodStack.gameObject.SetActive(false);
@@ -117,11 +133,14 @@ public class QuestsManager : MonoBehaviour
         openEyes.StartClosingEyes();
         text.text = "";
         boxController.OnFinishQuest -= FinishDay1;
+        Timer.OnTimerEnded -= () => FinishDay1(false);
+
         StartCoroutine(GoToBedroomInTime(2));
     }
 
     private void QuestDay2Initialize()
     {
+        Timer.OnTimerEnded += () => FinishDay0(false);
 
         boxController.gameObject.SetActive(false);
         wineController.gameObject.SetActive(false);
@@ -137,6 +156,8 @@ public class QuestsManager : MonoBehaviour
     {
 
         dayManager.FinishDay(sklepusBusted);
+        Timer.OnTimerEnded -= () => FinishDay2(false);
+
         openEyes.StartClosingEyes();
         text.text = "";
         boxController.OnFinishQuest -= FinishDay2;
