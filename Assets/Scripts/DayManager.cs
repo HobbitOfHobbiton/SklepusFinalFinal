@@ -67,14 +67,19 @@ public class DayManager : MonoBehaviour
     public void FinishDay(bool sklepusBusted)
     {
         openEyes.StartClosingEyes();
+        PlayerPrefs.SetInt(RoomSetup.ROOM_ENTERING_FLAVOR_KEY, 0);
+
         if (sklepusBusted)
         {
             InitiateSubsequentDay();
             PlayerPrefs.SetInt("sklepusBusted", 1);
+
         }
         else
+        {
             PlayerPrefs.SetInt("sklepusBusted", 0);
 
+        }
         //Load Room scene
 
     }
