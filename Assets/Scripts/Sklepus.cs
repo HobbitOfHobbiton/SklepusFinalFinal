@@ -49,7 +49,7 @@ public class Sklepus : MonoBehaviour
         if (day == 1)
         {
             _todayPath = DayOnePath;
-            LeanTween.delayedCall(2.5f, () =>
+            LeanTween.delayedCall(3.76f, () =>
             {
                 LeanTween.rotateAroundLocal(gameObject, Vector3.up, 107f, 1f);
             });
@@ -58,7 +58,7 @@ public class Sklepus : MonoBehaviour
         if (_todayPath[0] == null) return;
 
 
-        LeanTween.delayedCall(4f, () =>
+        LeanTween.delayedCall(5.2f, () =>
         {
             LTDescr lt = LeanTween.moveSpline(gameObject, _todayPath.Select(point => new Vector3(point.transform.position.x,
                 transform.position.y, point.transform.position.z)).ToArray(), DayManager.DAY_TIME);
