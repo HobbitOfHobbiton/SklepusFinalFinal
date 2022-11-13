@@ -1092,7 +1092,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6566961207708010694}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 1.1262789, y: 3.68, z: 3.4065967}
   m_LocalScale: {x: 0.22, y: 0.12375, z: 0.12375}
   m_ConstrainProportionsScale: 1
@@ -1171,9 +1171,10 @@ MonoBehaviour:
     topicByDay: Dobra robota!
     fromByDay: Kierownik
   emailsByDays:
-  - textByDay: "Dzisiaj na dziale rybnym starsza Pani z\u0142ama\u0142a kostk\u0119.
-      Dlaczego by\u0142a tam rozlana woda?! \t\t\t\t      \t\t\t\t   W Y L A T U
-      J E S Z !"
+  - textByDay: "Szanowny Panie. Dzisiaj na dziale rybnym dosz\u0142o do powa\u017Cnego
+      wypadku. Nasza klientka wywr\xF3ci\u0142a si\u0119 na ka\u0142u\u017Cy wodnej
+      i dozna\u0142a powa\u017Cnego urazu kostki. Wszystko podczas Pa\u0144skiej
+      zmiany.   ZWALNIAM W TRYBIE NATYCHMIASTOWYM!!!"
     topicByDay: Wypadek na dziale rybnym
     fromByDay: Kierownik
   - textByDay: "Czy to ty podstawi\u0142e\u015B butelki na dziale z alkoholem w taki
@@ -1185,7 +1186,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  sceneSceneName: MallMaciek
+  doorInRoomController: {fileID: 0}
+  sceneSceneName: MallFinalFinal
+  roomSceneName: Room
 --- !u!65 &6566961207708010700
 BoxCollider:
   m_ObjectHideFlags: 0
