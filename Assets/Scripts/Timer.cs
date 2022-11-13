@@ -12,6 +12,8 @@ public class Timer : MonoBehaviour
 
     private Single _currentTime = 20;
 
+    private QuestsManager questManager;
+
     public static event Action OnTimerEnded;
 
     // Start is called before the first frame update
