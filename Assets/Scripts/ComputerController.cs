@@ -16,7 +16,7 @@ public class ComputerController : MonoBehaviour, IInteractable
     [SerializeField] private DoorInRoomController doorInRoomController;
 
     [Space]
-    [SerializeField] private string sceneSceneName = "MallMaciek";
+    [SerializeField] private string sceneSceneName = "Wobloblo";
     [SerializeField] private string roomSceneName = "Room";
 
     int sklepusBusted;

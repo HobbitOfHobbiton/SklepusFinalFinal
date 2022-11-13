@@ -35,7 +35,7 @@ Transform:
   - {fileID: 6591913318334304223}
   - {fileID: 7710014669456967500}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3410356705553181395
 PrefabInstance:
@@ -575,6 +575,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1350702725463620735, guid: 1e63e1880c20b28429ec39cdc6a45ceb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6324210223938141664, guid: 1e63e1880c20b28429ec39cdc6a45ceb, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
