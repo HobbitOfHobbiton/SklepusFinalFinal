@@ -20,6 +20,9 @@ public class RoomSetup : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        AudioManager.Instance.s();
+        AudioManager.Instance.ss();
+
         Int32 flavor = PlayerPrefs.GetInt(ROOM_ENTERING_FLAVOR_KEY, 0);
 
         if (flavor == 0)//return from job

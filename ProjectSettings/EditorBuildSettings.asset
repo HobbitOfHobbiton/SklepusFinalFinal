@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: cb6348bd2f6058f44afa9d1da11af540
+  - enabled: 1
     path: Assets/Scenes/MallMaciek.unity
     guid: 88348637615c3f14281c0d7e514b86f4
   - enabled: 1
@@ -20,9 +23,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Wobloblo[LOCKED by Pawel].unity
     guid: 1a2df86c0badb40ab8b9e34e55f9a513
-  - enabled: 1
-    path: Assets/Scenes/Menu.unity
-    guid: cb6348bd2f6058f44afa9d1da11af540
   - enabled: 1
     path: Assets/Scenes/MallFinalFinal.unity
     guid: b1239770a5bcd0b46a40280d60c28e27

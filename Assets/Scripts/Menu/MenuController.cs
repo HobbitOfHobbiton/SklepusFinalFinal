@@ -24,6 +24,7 @@ public class MenuController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        PlayerPrefs.DeleteAll();
         objIntro.SetActive(false);
         objIntro.GetComponent<Image>().color = new Color(24f / 255f, 24f / 255f, 24f / 255f, 0f);
         StartCoroutine(AngrySmile());
@@ -120,7 +121,7 @@ public class MenuController : MonoBehaviour
                                                                 })
                                                                 .setOnComplete(() =>
                                                                 {
-                                                                    LeanTween.delayedCall(3f, () =>
+                                                                    LeanTween.delayedCall(6f, () =>
                                                                     {
                                                                         objIntro.SetActive(false);
                                                                         txtAreYouSure.gameObject.SetActive(false);

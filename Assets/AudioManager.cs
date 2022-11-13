@@ -32,6 +32,15 @@ public class AudioManager : MonoBehaviour
     {
         MallAmbient.Play();
     }
+    public void ss()
+    {
+        MallMusic.Stop();
+    }
+
+    public void s()
+    {
+        MallAmbient.Stop();
+    }
 
     // Start is called before the first frame update
     void Start()
