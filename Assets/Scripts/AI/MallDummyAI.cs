@@ -33,8 +33,10 @@ public class MallDummyAI : MonoBehaviour
 
     async UniTask CheckDistance()
     {
-        while(_agent.remainingDistance > _agent.stoppingDistance + 0.1f)
+        while((_agent?.remainingDistance > _agent?.stoppingDistance + 0.1f))
         {
+            if(!_agent) return;
+
             await UniTask.NextFrame();
         }
         await UniTask.Delay(100);
