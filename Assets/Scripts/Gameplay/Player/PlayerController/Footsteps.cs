@@ -19,7 +19,7 @@ namespace Controllers
         private PlayerController _playerController;
         private PlayerReferences _refs;
 
-    float nextStepTime;
+        float nextStepTime;
 
         public void Init(PlayerController playerController)
         {
@@ -29,7 +29,7 @@ namespace Controllers
 
         public void Update()
         {
-            //UpdateFootsteps(_playerController.CameraController.HeadBob.BobCycle);
+            UpdateFootsteps(_playerController.CameraController.HeadBob.BobCycle);
         }
 
         void UpdateFootsteps(float bobCycle)
@@ -38,10 +38,10 @@ namespace Controllers
             {
                 nextStepTime = bobCycle + 0.5f;
 
-                if(_playerController.IsRunning)
-                    _emitter.EventReference = _runEvent;
-                else
-                    _emitter.EventReference = _walkEvent;
+                //if (_playerController.IsRunning)
+                //    _emitter.EventReference = _runEvent;
+                //else
+                _emitter.EventReference = _walkEvent;
 
                 _emitter.Play();
             }

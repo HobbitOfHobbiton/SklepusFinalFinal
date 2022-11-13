@@ -398,11 +398,11 @@ MonoBehaviour:
   _footsteps:
     _walkEvent:
       Guid:
-        Data1: 0
-        Data2: 0
-        Data3: 0
-        Data4: 0
-      Path: 
+        Data1: -1660612238
+        Data2: 1194449798
+        Data3: -321013375
+        Data4: 325606244
+      Path: event:/footsteps
     _runEvent:
       Guid:
         Data1: 0
@@ -426,6 +426,7 @@ MonoBehaviour:
       Path: 
     _emitter: {fileID: 3794619107606657623}
   IsLocked: 0
+  mouseDelta: {x: 0, y: 0}
 --- !u!143 &3794619107606657644
 CharacterController:
   m_ObjectHideFlags: 0
