@@ -123,7 +123,7 @@ public class QuestsManager : MonoBehaviour
 
         boxController.gameObject.SetActive(true);
         wineController.gameObject.SetActive(true);
-        boxController.OnFinishQuest += FinishDay1;
+        wineController.OnFinishQuest += FinishDay1;
 
     }
 
