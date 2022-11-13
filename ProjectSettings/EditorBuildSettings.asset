@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MallFinalFinalDark.unity
     guid: b732551b8b63945b7bfae48c7ad065a2
+  - enabled: 1
+    path: Assets/Scenes/Wobloblo[LOCKED by Pawel].unity
+    guid: 1a2df86c0badb40ab8b9e34e55f9a513
   m_configObjects: {}
