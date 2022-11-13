@@ -29,7 +29,7 @@ public class Sklepus : MonoBehaviour
     Single _timePassed = 0f;
     private IEnumerator EmitBloodCor()
     {
-        Single addTime = 0.2f;
+        Single addTime = 0.032f;
         _timePassed += _timePassed;
         yield return new WaitForSeconds(addTime);
         GameObject blood = Instantiate(objBloodPath);
@@ -44,7 +44,6 @@ public class Sklepus : MonoBehaviour
 
     public void PlayDaySequence(Int32 day)
     {
-        day = 1;
 
         if (day == 0)
         {
@@ -58,6 +57,7 @@ public class Sklepus : MonoBehaviour
         else
         {
             _todayPath = DayTwoPath;
+            EmitBlood();
         }
 
         LeanTween.delayedCall(5.2f, () =>
