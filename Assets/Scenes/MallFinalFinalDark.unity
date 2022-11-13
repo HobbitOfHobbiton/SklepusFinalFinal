@@ -25460,7 +25460,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1988514828, guid: 30a57e334469447d9aa78f1e892d650c, type: 3}
       propertyPath: m_Speed
-      value: 3
+      value: 3.2
       objectReference: {fileID: 0}
     - target: {fileID: 177449305630142732, guid: 30a57e334469447d9aa78f1e892d650c, type: 3}
       propertyPath: m_Name
@@ -57616,6 +57616,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1988514828, guid: 30a57e334469447d9aa78f1e892d650c, type: 3}
+      propertyPath: m_Speed
+      value: 3.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1988514828, guid: 30a57e334469447d9aa78f1e892d650c, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
@@ -76614,6 +76618,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openEyes: {fileID: 1790556639}
+  finalText: {fileID: 738891182}
 --- !u!65 &1638785567
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -80070,7 +80075,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1988514828, guid: 30a57e334469447d9aa78f1e892d650c, type: 3}
       propertyPath: m_Speed
-      value: 3
+      value: 3.2
       objectReference: {fileID: 0}
     - target: {fileID: 177449305630142732, guid: 30a57e334469447d9aa78f1e892d650c, type: 3}
       propertyPath: m_Name
@@ -80987,7 +80992,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1988514828, guid: 30a57e334469447d9aa78f1e892d650c, type: 3}
       propertyPath: m_Speed
-      value: 3
+      value: 3.2
       objectReference: {fileID: 0}
     - target: {fileID: 1988514828, guid: 30a57e334469447d9aa78f1e892d650c, type: 3}
       propertyPath: m_Enabled
