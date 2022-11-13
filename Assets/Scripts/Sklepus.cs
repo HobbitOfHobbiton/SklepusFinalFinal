@@ -61,7 +61,7 @@ public class Sklepus : MonoBehaviour
         LeanTween.delayedCall(5.2f, () =>
         {
             LTDescr lt = LeanTween.moveSpline(gameObject, _todayPath.Select(point => new Vector3(point.transform.position.x,
-                transform.position.y, point.transform.position.z)).ToArray(), DayManager.DAY_TIME);
+                transform.position.y, point.transform.position.z)).ToArray(), DayManager.DAY_TIME / 5f);
         });
 
     }
