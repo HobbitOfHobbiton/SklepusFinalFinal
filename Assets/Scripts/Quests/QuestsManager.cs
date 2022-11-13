@@ -1,3 +1,4 @@
+using Controllers;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -17,6 +18,8 @@ public class QuestsManager : MonoBehaviour
     [SerializeField] private OpenEyes openEyes;
     [SerializeField] private DayManager dayManager;
     [SerializeField] private bool isRoom = false;
+    [SerializeField] private GameObject player;
+    [SerializeField] private Sklepus sklepus;
 
     [Space]
     [SerializeField] private string roomSceneName = "Room";
@@ -31,6 +34,8 @@ public class QuestsManager : MonoBehaviour
     [Header("Day 1 quest variables")]
     [SerializeField] private BoxController boxController;
     [SerializeField] private WineController wineController;
+    [SerializeField] private Transform placeOfSpawnPlayer;
+    [SerializeField] private Transform placeOfSpawnSklepus;
 
 
 
@@ -80,6 +85,8 @@ public class QuestsManager : MonoBehaviour
         puddleController.gameObject.SetActive(true);
         shelfFoodPutter.OnFinishQuest += FinishDay0;
         puddleController.OnFinishQuest += FinishDay0;
+        Timer.OnTimerEnded += () => FinishDay0(false);
+
     }
 
     private void FinishDay0(bool sklepusBusted)
@@ -89,11 +96,27 @@ public class QuestsManager : MonoBehaviour
         text.text = "";
         shelfFoodPutter.OnFinishQuest -= FinishDay0;
         puddleController.OnFinishQuest -= FinishDay0;
+        Timer.OnTimerEnded -= () => FinishDay0(false);
+
         StartCoroutine(GoToBedroomInTime(2));
     }
 
     private void QuestDay1Initialize()
     {
+        Timer.OnTimerEnded += () => FinishDay0(false);
+
+        player.GetComponent<PlayerController>().IsLocked = true;
+        LeanTween.delayedCall(0.01f, () =>
+        {
+            player.transform.position = placeOfSpawnPlayer.position;
+            LeanTween.delayedCall(0.2f, () =>
+            {
+                player.GetComponent<PlayerController>().IsLocked = false;
+            });
+
+        });
+        sklepus.transform.position = placeOfSpawnSklepus.position;
+
         foodStack.gameObject.SetActive(false);
         shelfFoodPutter.gameObject.SetActive(false);
         puddleController.gameObject.SetActive(false);
@@ -110,11 +133,14 @@ public class QuestsManager : MonoBehaviour
         openEyes.StartClosingEyes();
         text.text = "";
         boxController.OnFinishQuest -= FinishDay1;
+        Timer.OnTimerEnded -= () => FinishDay1(false);
+
         StartCoroutine(GoToBedroomInTime(2));
     }
 
     private void QuestDay2Initialize()
     {
+        Timer.OnTimerEnded += () => FinishDay0(false);
 
         boxController.gameObject.SetActive(false);
         wineController.gameObject.SetActive(false);
@@ -130,6 +156,8 @@ public class QuestsManager : MonoBehaviour
     {
 
         dayManager.FinishDay(sklepusBusted);
+        Timer.OnTimerEnded -= () => FinishDay2(false);
+
         openEyes.StartClosingEyes();
         text.text = "";
         boxController.OnFinishQuest -= FinishDay2;

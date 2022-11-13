@@ -677,6 +677,10 @@ PrefabInstance:
       propertyPath: m_text
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3893388496119775652, guid: 1e63e1880c20b28429ec39cdc6a45ceb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3999733326779651700, guid: 1e63e1880c20b28429ec39cdc6a45ceb, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -2396,6 +2400,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 414613995}
     - target: {fileID: 6566961207708010701, guid: 00de2bde208227741a84e2bd77d331e2, type: 3}
+      propertyPath: sceneSceneName
+      value: MallFinalFinal
+      objectReference: {fileID: 0}
+    - target: {fileID: 6566961207708010701, guid: 00de2bde208227741a84e2bd77d331e2, type: 3}
       propertyPath: texts.Array.data[0]
       value: 
       objectReference: {fileID: 414613994}
@@ -2422,6 +2430,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8857311172142360072, guid: 5f5ad30703fc64a44b26f340036431f9, type: 3}
+      propertyPath: sceneSceneName
+      value: MallFinalFinal
+      objectReference: {fileID: 0}
     - target: {fileID: 8857311172142360075, guid: 5f5ad30703fc64a44b26f340036431f9, type: 3}
       propertyPath: m_RootOrder
       value: 8

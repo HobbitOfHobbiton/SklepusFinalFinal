@@ -46,7 +46,7 @@ public class Sklepus : MonoBehaviour
     {
         day = 1;
 
-        if (day == 1)
+        if (day == 0)
         {
             _todayPath = DayOnePath;
             LeanTween.delayedCall(3.76f, () =>
@@ -55,13 +55,15 @@ public class Sklepus : MonoBehaviour
             });
             //EmitBlood();
         }
-        if (_todayPath[0] == null) return;
-
+        else
+        {
+            _todayPath = DayTwoPath;
+        }
 
         LeanTween.delayedCall(5.2f, () =>
         {
             LTDescr lt = LeanTween.moveSpline(gameObject, _todayPath.Select(point => new Vector3(point.transform.position.x,
-                transform.position.y, point.transform.position.z)).ToArray(), DayManager.DAY_TIME / 5f);
+                transform.position.y, point.transform.position.z)).ToArray(), DayManager.DAY_TIME / 3f);
         });
 
     }

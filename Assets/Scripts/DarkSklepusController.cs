@@ -16,7 +16,10 @@ public class DarkSklepusController : MonoBehaviour
     }
     private void Update()
     {
-        navMesh.SetDestination(player.transform.position);
+        if (navMesh.gameObject.activeSelf)
+        {
+            navMesh.SetDestination(player.transform.position);    
+        }
     }
 
 }
