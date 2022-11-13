@@ -9,7 +9,7 @@ public class DarkSklepusFaceController : MonoBehaviour
     [SerializeField] private Material darkFace;
     [SerializeField] private Material normalFace;
     [SerializeField] private MeshRenderer meshRenderer;
-    [SerializeField] private bool isInDarkMode;
+    public bool isInDarkMode;
     private Material[] _materials;
 
 
@@ -19,6 +19,10 @@ public class DarkSklepusFaceController : MonoBehaviour
        InvokeRepeating(nameof(CreepOut),0,5f);
     }
 
+    public void SwitchFaces(bool state)
+    {
+        isInDarkMode = state;
+    }
     private void Update()
     {
         if (isInDarkMode)
@@ -33,7 +37,7 @@ public class DarkSklepusFaceController : MonoBehaviour
         meshRenderer.materials = _materials;
     }
 
-    private void CreepOut()
+    public void CreepOut()
     {
         LeanTween.value(gameObject, new Vector2(1, 1), new Vector2(1, Random.Range(-15,15)),2f).setOnUpdate((Vector2 value) => 
         {
@@ -46,8 +50,6 @@ public class DarkSklepusFaceController : MonoBehaviour
                 darkFace.mainTextureOffset = value;
             
             }).setEaseOutSine().setLoopPingPong(1);
-    
-        
         
     }
 }
