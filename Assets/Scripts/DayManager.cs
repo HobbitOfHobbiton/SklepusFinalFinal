@@ -49,6 +49,9 @@ public class DayManager : MonoBehaviour
 
         yield return new WaitForSeconds(3f);
 
+        AudioManager.Instance.PlayMallAmbient();
+        AudioManager.Instance.PlayMallMusic();
+
         currentDayText.gameObject.SetActive(false);
 
 
